@@ -1,2 +1,2 @@
 # Isyancilara-Yardim
-İsyancılara armor, flashbang, wallhack bombası verir
+İsyancılara kredi karşılığında armor, flashbang, wallhack bombası verir
