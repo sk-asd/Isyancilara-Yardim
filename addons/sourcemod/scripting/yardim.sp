@@ -29,6 +29,7 @@ public void OnPluginStart()
 	flash = CreateConVar("sm_yardim_flash", "1", "Flashbang aktif olsun mu?", 0, true, 0.0, true, 1.0);
 	wh = CreateConVar("sm_yardim_wh", "1", "Wallhack bombası aktif olsunmu?", 0, true, 0.0, true, 1.0);
 	armorvalue = CreateConVar("sm_yardim_armorvalue", "100", "Ne kadar zırh versin", 0, true, 0.0, true, 100.0);
+	AutoExecConfig(true, "Yardim", "phiso");
 	RegConsoleCmd("sm_yardim", Command_Yardim);
 }
 public Action Command_Yardim(int client, int args)
