@@ -4,7 +4,7 @@
 #include <sourcemod>
 #pragma semicolon 1
 #pragma newdecls required
-ConVar kredi, zirh, flash, wh, armorvalue;
+ConVar kredi = null;, zirh = null;, flash = null;, wh = null;, armorvalue = null;
 int kullan = 0;
 public Plugin myinfo =  {
 	name = "İsyancılara Yardım", 
