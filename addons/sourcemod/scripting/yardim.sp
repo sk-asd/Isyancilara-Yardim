@@ -4,8 +4,8 @@
 #include <sourcemod>
 #pragma semicolon 1
 #pragma newdecls required
-ConVar kredi = null, zirh = null, flash = null, wh = null, armorvalue = null;
-int kullan;
+ConVar kredi, zirh, flash, wh, armorvalue;
+int kullan = 0;
 public Plugin myinfo =  {
 	name = "İsyancılara Yardım", 
 	author = "phiso", 
@@ -29,9 +29,14 @@ public void OnPluginStart()
 	flash = CreateConVar("sm_yardim_flash", "1", "Flashbang aktif olsun mu?", 0, true, 0.0, true, 1.0);
 	wh = CreateConVar("sm_yardim_wh", "1", "Wallhack bombası aktif olsunmu?", 0, true, 0.0, true, 1.0);
 	armorvalue = CreateConVar("sm_yardim_armorvalue", "100", "Ne kadar zırh versin", 0, true, 0.0, true, 100.0);
-	AutoExecConfig(true, "Yardim", "phiso");
+	
+	AutoExecConfig(true, "Isyancilara-Yardim", "phiso");
+	
+	HookEvent("round_star", Elbasladi);
+	
 	RegConsoleCmd("sm_yardim", Command_Yardim);
 }
+public Action Elbasladi(Event event, const char[] name, bool dontBroadcast){kullan = 0;}
 public Action Command_Yardim(int client, int args)
 {
 	if (Store_GetClientCredits(client) >= kredi.IntValue)
